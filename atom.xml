@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://pcvc.github.io/atom.xml" rel="self"/>
-  <link href="http://pcvc.github.io/"/>
-  <updated>2014-02-13T14:27:20+08:00</updated>
-  <id>http://pcvc.github.io/</id>
+  <link href="http://pcvc.net/atom.xml" rel="self"/>
+  <link href="http://pcvc.net/"/>
+  <updated>2014-02-13T14:47:40+08:00</updated>
+  <id>http://pcvc.net/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
     
