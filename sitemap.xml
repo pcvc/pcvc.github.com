@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://pcvc.net/blog/2014/02/13/this-is-my-first-blog-page/</loc>
+        <lastmod>2014-02-13T14:59:52+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://pcvc.net/blog/archives/</loc>
-        <lastmod>2014-02-13T14:20:47+08:00</lastmod>
+        <lastmod>2014-02-13T14:59:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://pcvc.net/</loc>
-        <lastmod>2014-02-13T14:20:47+08:00</lastmod>
+        <lastmod>2014-02-13T14:59:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://pcvc.net/robots.txt</loc>
