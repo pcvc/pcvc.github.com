@@ -4,7 +4,7 @@
   <title><![CDATA[清水]]></title>
   <link href="http://pcvc.net/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
-  <updated>2014-02-13T15:00:04+08:00</updated>
+  <updated>2014-02-18T20:47:21+08:00</updated>
   <id>http://pcvc.net/</id>
   <author>
     <name><![CDATA[清水]]></name>
@@ -12,16 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[This Is My First Blog Page]]></title>
-    <link href="http://pcvc.net/blog/2014/02/13/this-is-my-first-blog-page/"/>
-    <updated>2014-02-13T14:59:21+08:00</updated>
-    <id>http://pcvc.net/blog/2014/02/13/this-is-my-first-blog-page</id>
-    <content type="html"><![CDATA[<p>this is my first page.</p>
-
-<p>i will quitly come back.</p>
-]]></content>
-  </entry>
   
 </feed>
