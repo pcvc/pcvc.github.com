@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[清水]]></title>
-  <link href="http://pcvc.net/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Easay | 清水]]></title>
+  <link href="http://pcvc.net/blog/categories/easay/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
   <updated>2014-02-18T21:24:26+08:00</updated>
   <id>http://pcvc.net/</id>
