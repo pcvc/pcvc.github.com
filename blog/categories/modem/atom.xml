@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[清水]]></title>
-  <link href="http://pcvc.net/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Modem | 清水]]></title>
+  <link href="http://pcvc.net/blog/categories/modem/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
   <updated>2014-02-22T21:32:05+08:00</updated>
   <id>http://pcvc.net/</id>
@@ -70,64 +70,6 @@
 <a href="http://blog.csdn.net/feifei17/article/details/8795002">http://blog.csdn.net/feifei17/article/details/8795002</a></p>
 
 <p>由于没想往这方面发展，所以能完成自己的需求就罢了。现已用C# winform实现多线程群发手机短信、自动获取每张卡内余额、定时获取短信回复。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[莫名其妙的网络故障]]></title>
-    <link href="http://pcvc.net/blog/2014/02/22/inexplicable-network-failure/"/>
-    <updated>2014-02-22T21:24:52+08:00</updated>
-    <id>http://pcvc.net/blog/2014/02/22/inexplicable-network-failure</id>
-    <content type="html"><![CDATA[<p>这次无法访问网络故障出得有点莫名其妙。</p>
-
-<p>故障时间：17:50 2014-01-26 星期日 休息日
-监控地点：无电脑、无网络、3G差，手机电量1%
-故障体现：网站打不开，远程桌面连不上，PING不通，DRAC可以连。</p>
-
-<p>根据系统日志，在这时间点并没发现明显的严重应用程序日志和系统日志，倒是在 2014/1/26 18:23:56 出现大量来自 ESENT 的应用程序错误，日志描述如下：</p>
-
-<p>Catalog Database (856) Catalog Database: 由于系统错误 5 (0x00000005):“拒绝访问。 ”，确定包含“C:\Windows\system32\CatRoot2\”的卷“C:\”的最小 I/O 块大小的尝试失败。此操作将失败，并出现错误 -1032 (0xfffffbf8)。</p>
-
-<p>还有上面的错误都附带一个来自 Microsoft-Windows-CAPI2 的应用程序错误日志:</p>
-
-<p>“加密服务”服务未能初始化编录数据库。ESENT 错误为: -1032。</p>
-
-<p>第一个日志，看起来是权限问题无法写入的问题，但是是什么程序需要写入呢？写入不成功会导致断网断远程？这有点不靠谱。</p>
-
-<p>据查，第一个错误的原因是：由于服务器的C盘做了安全策略，然后导致补丁没有修补成功，给C盘一个 Users 组的默认的权限就可以了。</p>
-
-<p>第二个错误是第一个造成的。</p>
-
-<p>OS的自动升级是关闭的，打补丁从何说起？难道是安全狗，经查安全狗也没启用打补丁功能。19:34:58 再次出现 ESENT 错误日志。</p>
-
-<p>综合分析，没有找出确切的原因，只能断定以下两种可能：</p>
-
-<p>1）安全狗自动打补丁，出现大量 ESENT 错误，造成补丁打一半所有端口服务停止。
-2）安全狗导致系统异常造成网络瘫痪和断网。</p>
-
-<p>采取举动：</p>
-
-<p>给C盘一个 Users 组的默认的权限。随后，CatRoot2 出现 20M 的文件的LOG文件，也没出现 ESENT 错误。</p>
-
-<p>CatRoot2 产生的文件和给 Users 权限有关系的，但是否是这个原因导致这次故障还没确切证据，个人观点表示不怎么可能是。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[托管在github的Octopress博客]]></title>
-    <link href="http://pcvc.net/blog/2014/02/22/github-and-octopress/"/>
-    <updated>2014-02-22T21:19:57+08:00</updated>
-    <id>http://pcvc.net/blog/2014/02/22/github-and-octopress</id>
-    <content type="html"><![CDATA[<p>托管在github的Octopress博客安装、配置</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[这会是最后一个第一吗？]]></title>
-    <link href="http://pcvc.net/blog/2014/02/18/first-blog/"/>
-    <updated>2014-02-18T21:21:15+08:00</updated>
-    <id>http://pcvc.net/blog/2014/02/18/first-blog</id>
-    <content type="html"><![CDATA[<p>我的博客，有过很多个“第一”篇文章，这会是最后一个第一吗？</p>
 ]]></content>
   </entry>
   

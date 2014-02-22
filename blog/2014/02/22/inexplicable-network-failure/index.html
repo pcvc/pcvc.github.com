@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>清水</title>
+  <title>莫名其妙的网络故障 - 清水</title>
   <meta name="author" content="清水">
 
   
-  <meta name="description" content="由于群发短信的需要，这几天接触了一下GSM Modem串口编程。主要是AT命令的使用。还有就是PDU编码的知识，简单的做个备忘。 GSM Modem是一种使用移动通讯系统的调制解调器。GSM Modem就像一部手机一样通过SIM卡注册到运营商，当GSM Modem连接到电脑上的时候， &hellip;">
+  <meta name="description" content="这次无法访问网络故障出得有点莫名其妙。 故障时间：17:50 2014-01-26 星期日 休息日
+监控地点：无电脑、无网络、3G差，手机电量1%
+故障体现：网站打不开，远程桌面连不上，PING不通，DRAC可以连。 根据系统日志，在这时间点并没发现明显的严重应用程序日志和系统日志，倒是在 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pcvc.net">
+  <link rel="canonical" href="http://pcvc.net/blog/2014/02/22/inexplicable-network-failure">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="清水" type="application/atom+xml">
@@ -63,102 +65,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/02/22/gsm-modem-serial-programming/">GSM Modem串口编程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-02-22T21:25:45+08:00" pubdate data-updated="true">2014-02-22 Saturday</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>由于群发短信的需要，这几天接触了一下GSM Modem串口编程。主要是AT命令的使用。还有就是PDU编码的知识，简单的做个备忘。</p>
-
-<p>GSM Modem是一种使用移动通讯系统的调制解调器。GSM Modem就像一部手机一样通过SIM卡注册到运营商，当GSM Modem连接到电脑上的时候，电脑可以通过它与移动网络进行通讯，用户还可以通过它来接收和发送彩信以及短信。</p>
-
-<p>接收短信的PDU编码解析：</p>
-
-<p>0891683108200105F06005800180F60008412081611530238C050003C603015C0A656C76845BA26237FF0C60A8597DFF016B228FCE4F7F752875355B506E20905377ED4FE184254E1A5385FF0C60A85F53524D4F59989D4E3A00330034002E003300355143FF0CFF084EC54F9B53C28003FF0C5B9E96454EE551FA8D26540E8D2653554E3A51C6FF093002598297005145503C4EA48D398BF770B951FB0068007400740070
-0891683108707515F0240D91688166669883F30008412051915020230A597D50CF54586751FF01</p>
-
-<p>0891683108200105F0 固定的
-后面2位是“基本参数”。根据观察：24为手机回复，11为发送短信
-后面2位是回复号码的个数，是实际个数而不是编码后的个数。根据观察：0D为手机回复，05为10086
-后面2位是回复地址格式(TON/NPI)，91为国际格式，手机回复时为91，其它为80
-后面2位是协议标识(TP-PID)，00是普通GSM类型，点到点方式
-后面2位是用户信息编码方式(TP-DCS)，00：7-bit编码，04：8-bit编码，08：USC2编码
-后面14位是时间，倒序的，41207121033223 => 14-02-17 12:30:23，最后2位为时区格式+32</p>
-
-<p>用到的AT命令：</p>
-
-<p>AT
-测试AT命令</p>
-
-<p>AT+CMGL=4
-获取SIM卡所有短信</p>
-
-<p>AT+CMGF=0
-设置短信编码格式</p>
-
-<p>AT+CMGS=43
-发送短信的长度</p>
-
-<p>AT+CMGD=1,4
-删除SIM所有短信</p>
-
-<p>AT+CPBW=1,&ldquo;15921796442&rdquo;,,&ldquo;MY&rdquo;
-写入将名称为MY的电话号码到SIM</p>
-
-<p>AT+CPBF=&ldquo;MY&rdquo;
-查找名为MY的电话号码</p>
-
-<p>所有命令无结果或失败均返回ERROR，像查找SIM号码，若找不到也是返回ERROR。</p>
-
-<p>在线AT命令调试工具：
-<a href="http://m2msupport.net/m2msupport/module-tester/">http://m2msupport.net/m2msupport/module-tester/</a></p>
-
-<p>PDU编码参考网址：
-<a href="http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html">http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html</a>
-<a href="http://blog.csdn.net/xqf222/article/details/6577068">http://blog.csdn.net/xqf222/article/details/6577068</a>
-<a href="http://blog.chinaunix.net/uid-28269896-id-3451906.html">http://blog.chinaunix.net/uid-28269896-id-3451906.html</a>
-<a href="http://blog.csdn.net/feifei17/article/details/8795002">http://blog.csdn.net/feifei17/article/details/8795002</a></p>
-
-<p>由于没想往这方面发展，所以能完成自己的需求就罢了。现已用C# winform实现多线程群发手机短信、自动获取每张卡内余额、定时获取短信回复。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/22/inexplicable-network-failure/">莫名其妙的网络故障</a></h1>
+      <h1 class="entry-title">莫名其妙的网络故障</h1>
     
     
       <p class="meta">
@@ -181,7 +93,7 @@
   </header>
 
 
-  <div class="entry-content"><p>这次无法访问网络故障出得有点莫名其妙。</p>
+<div class="entry-content"><p>这次无法访问网络故障出得有点莫名其妙。</p>
 
 <p>故障时间：17:50 2014-01-26 星期日 休息日
 监控地点：无电脑、无网络、3G差，手机电量1%
@@ -214,58 +126,16 @@
 
 <p>CatRoot2 产生的文件和给 Users 权限有关系的，但是否是这个原因导致这次故障还没确切证据，个人观点表示不怎么可能是。</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/22/github-and-octopress/">托管在github的Octopress博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">清水</span></span>
 
-<time datetime="2014-02-22T21:19:57+08:00" pubdate data-updated="true">2014-02-22 Saturday</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>托管在github的Octopress博客安装、配置</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/18/first-blog/">这会是最后一个第一吗？</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -277,27 +147,38 @@
   
 
 
-<time datetime="2014-02-18T21:21:15+08:00" pubdate data-updated="true">2014-02-18 Tuesday</time>
-        
-      </p>
+<time datetime="2014-02-22T21:24:52+08:00" pubdate data-updated="true">2014-02-22 Saturday</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/windows/'>windows</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>我的博客，有过很多个“第一”篇文章，这会是最后一个第一吗？</p>
+      <div class="sharing">
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/02/22/github-and-octopress/" title="Previous Post: 托管在github的Octopress博客">&laquo; 托管在github的Octopress博客</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/02/22/gsm-modem-serial-programming/" title="Next Post: GSM Modem串口编程">GSM Modem串口编程 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -329,6 +210,7 @@
 
   
 </aside>
+
 
     </div>
   </div>
