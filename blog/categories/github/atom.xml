@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Github | 清水]]></title>
+  <link href="http://pcvc.net/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://pcvc.net/"/>
+  <updated>2014-02-22T21:52:49+08:00</updated>
+  <id>http://pcvc.net/</id>
+  <author>
+    <name><![CDATA[清水]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[托管在github的Octopress博客]]></title>
+    <link href="http://pcvc.net/blog/2014/02/22/github-and-octopress/"/>
+    <updated>2014-02-22T21:19:57+08:00</updated>
+    <id>http://pcvc.net/blog/2014/02/22/github-and-octopress</id>
+    <content type="html"><![CDATA[<p>托管在github的Octopress博客安装、配置</p>
+]]></content>
+  </entry>
+  
+</feed>
