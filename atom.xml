@@ -4,7 +4,7 @@
   <title><![CDATA[清水]]></title>
   <link href="http://pcvc.net/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
-  <updated>2014-02-22T22:47:29+08:00</updated>
+  <updated>2014-02-22T22:57:26+08:00</updated>
   <id>http://pcvc.net/</id>
   <author>
     <name><![CDATA[清水]]></name>
@@ -18,9 +18,9 @@
     <link href="http://pcvc.net/blog/2014/02/22/gsm-modem-serial-programming/"/>
     <updated>2014-02-22T21:25:45+08:00</updated>
     <id>http://pcvc.net/blog/2014/02/22/gsm-modem-serial-programming</id>
-    <content type="html"><![CDATA[<p>由于群发短信的需要，这几天接触了一下GSM Modem串口编程。主要是AT命令的使用。还有就是PDU编码的知识，简单的做个备忘。</p>
+    <content type="html"><![CDATA[<p>　　由于群发短信的需要，这几天接触了一下GSM Modem串口编程。主要是AT命令的使用。还有就是PDU编码的知识，简单的做个备忘。</p>
 
-<p>GSM Modem是一种使用移动通讯系统的调制解调器。GSM Modem就像一部手机一样通过SIM卡注册到运营商，当GSM Modem连接到电脑上的时候，电脑可以通过它与移动网络进行通讯，用户还可以通过它来接收和发送彩信以及短信。</p>
+<p>　　GSM Modem是一种使用移动通讯系统的调制解调器。GSM Modem就像一部手机一样通过SIM卡注册到运营商，当GSM Modem连接到电脑上的时候，电脑可以通过它与移动网络进行通讯，用户还可以通过它来接收和发送彩信以及短信。</p>
 
 <h3>接收短信的PDU编码解析：</h3>
 
@@ -71,7 +71,7 @@
 <a href="http://blog.chinaunix.net/uid-28269896-id-3451906.html">http://blog.chinaunix.net/uid-28269896-id-3451906.html</a>
 <a href="http://blog.csdn.net/feifei17/article/details/8795002">http://blog.csdn.net/feifei17/article/details/8795002</a></p>
 
-<p>由于没想往这方面发展，所以能完成自己的需求就罢了。现已用C# winform实现多线程群发手机短信、自动获取每张卡内余额、定时获取短信回复。</p>
+<p>　　由于没想往这方面发展，所以能完成自己的需求就罢了。现已用C# winform实现多线程群发手机短信、自动获取每张卡内余额、定时获取短信回复。</p>
 ]]></content>
   </entry>
   
