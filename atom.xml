@@ -4,7 +4,7 @@
   <title><![CDATA[清水]]></title>
   <link href="http://pcvc.net/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
-  <updated>2014-02-22T23:06:42+08:00</updated>
+  <updated>2014-03-05T21:14:10+08:00</updated>
   <id>http://pcvc.net/</id>
   <author>
     <name><![CDATA[清水]]></name>
@@ -24,16 +24,27 @@
 
 <h3>接收短信的PDU编码解析：</h3>
 
-<p>0891683108200105F06005800180F60008412081611530238C050003C603015C0A656C76845BA26237FF0C60A8597DFF016B228FCE4F7F752875355B506E20905377ED4FE184254E1A5385FF0C60A85F53524D4F59989D4E3A00330034002E003300355143FF0CFF084EC54F9B53C28003FF0C5B9E96454EE551FA8D26540E8D2653554E3A51C6FF093002598297005145503C4EA48D398BF770B951FB0068007400740070
+<p>长短信：<br/>
+0891683108200105F06005800180F60008412081611530238C050003C603015C0A656C76845BA26237FF0C60A8597DFF016B228FCE4F7F752875355B506E20905377ED4FE184254E1A5385FF0C60A85F53524D4F59989D4E3A00330034002E003300355143FF0CFF084EC54F9B53C28003FF0C5B9E96454EE551FA8D26540E8D2653554E3A51C6FF093002598297005145503C4EA48D398BF770B951FB0068007400740070</p>
+
+<p>普通短信：<br/>
 0891683108707515F0240D91688166669883F30008412051915020230A597D50CF54586751FF01</p>
 
 <p>0891683108200105F0 固定的<br/>
-后面2位是“基本参数”。根据观察：24为手机回复，11为发送短信<br/>
+后面2位是“基本参数”。根据观察：24为普通短信手机回复，11为发送短信<br/>
 后面2位是回复号码的个数，是实际个数而不是编码后的个数。根据观察：0D为手机回复，05为10086<br/>
 后面2位是回复地址格式(TON/NPI)，91为国际格式，手机回复时为91，其它为80<br/>
 后面2位是协议标识(TP-PID)，00是普通GSM类型，点到点方式<br/>
 后面2位是用户信息编码方式(TP-DCS)，00：7-bit编码，04：8-bit编码，08：USC2编码<br/>
-后面14位是时间，倒序的，41207121033223 => 14-02-17 12:30:23，最后2位为时区格式+32</p>
+后面14位是时间，倒序的，41207121033223 => 14-02-17 12:30:23，最后2位为时区格式+32<br/>
+后面2位是内容长度，十六进制</p>
+
+<p>如果是长短信，后面的12位是协议信息和分拆短信信息描述，网上有很多资料可参考。<br/>
+0500基本固定<br/>
+03代表分拆短信位数<br/>
+C6唯一标识<br/>
+03一共有多少条短信<br/>
+01当前是第几条</p>
 
 <h3>用到的AT命令：</h3>
 
@@ -66,10 +77,16 @@
 
 <h3>PDU编码参考网址：</h3>
 
-<p><a href="http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html">http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html</a>
-<a href="http://blog.csdn.net/xqf222/article/details/6577068">http://blog.csdn.net/xqf222/article/details/6577068</a>
-<a href="http://blog.chinaunix.net/uid-28269896-id-3451906.html">http://blog.chinaunix.net/uid-28269896-id-3451906.html</a>
+<p><a href="http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html">http://www.cnblogs.com/babykick/archive/2011/03/25/1995980.html</a> <br/>
+<a href="http://blog.csdn.net/xqf222/article/details/6577068">http://blog.csdn.net/xqf222/article/details/6577068</a> <br/>
+<a href="http://blog.chinaunix.net/uid-28269896-id-3451906.html">http://blog.chinaunix.net/uid-28269896-id-3451906.html</a> <br/>
 <a href="http://blog.csdn.net/feifei17/article/details/8795002">http://blog.csdn.net/feifei17/article/details/8795002</a></p>
+
+<p>长短信：<br/>
+<a href="http://www.amobbs.com/thread-5527253-1-1.html">http://www.amobbs.com/thread-5527253-1-1.html</a> <br/>
+<a href="http://wapsoft.blog.163.com/blog/static/215540146201302312252800/">http://wapsoft.blog.163.com/blog/static/215540146201302312252800/</a> <br/>
+<a href="http://www.chawenti.com/articles/12443.html">http://www.chawenti.com/articles/12443.html</a> <br/>
+<a href="http://www.cnblogs.com/Engin/archive/2010/11/25/1887925.html">http://www.cnblogs.com/Engin/archive/2010/11/25/1887925.html</a></p>
 
 <p>　　由于没想往这方面发展，所以能完成自己的需求就罢了。现已用C# winform实现多线程群发手机短信、自动获取每张卡内余额、定时获取短信回复。</p>
 ]]></content>
