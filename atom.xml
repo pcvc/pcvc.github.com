@@ -4,7 +4,7 @@
   <title><![CDATA[清水]]></title>
   <link href="http://pcvc.net/atom.xml" rel="self"/>
   <link href="http://pcvc.net/"/>
-  <updated>2014-03-06T17:22:41+08:00</updated>
+  <updated>2014-03-06T17:44:36+08:00</updated>
   <id>http://pcvc.net/</id>
   <author>
     <name><![CDATA[清水]]></name>
@@ -140,6 +140,17 @@ C6唯一标识<br/>
     <updated>2014-02-22T21:19:57+08:00</updated>
     <id>http://pcvc.net/blog/2014/02/22/github-and-octopress</id>
     <content type="html"><![CDATA[<p>托管在github的Octopress博客安装、配置</p>
+
+<p>写博客就这几个命令：<br/>
+<code>sudo rake new_post['blog title']</code><br/>
+<code>sudo rake generate</code><br/>
+<code>sudo rake preview</code><br/>
+<code>sudo rake deploy</code></p>
+
+<h3>参考：</h3>
+
+<p><a href="http://wowubuntu.com/markdown/index.html">Markdown 语法说明 (简体中文版)</a><br/>
+<a href="http://blog.csdn.net/lcliliil/article/details/13725895" target="_blank">Octopress侧边栏及评论系统定制</a></p>
 ]]></content>
   </entry>
   
