@@ -1,0 +1,2 @@
+alter table Company add ImageCount int not null default(0)
+alter table Company add ImageUsedCount int not null default(0)
